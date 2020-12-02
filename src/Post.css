@@ -1,23 +1,28 @@
 .post {
-	max-width: 500px;
+	background-color: white;
+	max-width: 500px;/* sets the max size the post can be, stops it from over growing */
+	border: 1px solid lightgray;/* border around the whole post */
+	margin-bottom: 45px;/* gives gap between posts */
 }
 
 .post__header {
 	display: flex;/* displays content side by side */
 	align-items: center;/* aligns the contents to the center vertically */
-	padding: 20px;
+	padding: 20px;/* prevents the avatar and username from touching/sitting directly on top of image */
 }
 
 .post__avatar {
 	margin-right: 10px;/* gives a bit of space between avatar and username */
 }
 .post__image {
-	width: 100%;
+	width: 100%;/* image should take up 100% of the 500px max-width set in .post */
 	object-fit: contain;/* keeps aspect ratio of image */
+	border-top: 1px solid lightgray;/* top and bottom so that we dont get double border on sides of posts */
+	border-bottom: 1px solid lightgray;/* top and bottom so that we dont get double border on sides of posts */
 	
 }
 
 .post__text {
 	font-weight: normal;/* reset font boldness */
-	padding: 20px;
+	padding: 20px;/* prevents the username and comment from touching/sitting directly under the image */
 }

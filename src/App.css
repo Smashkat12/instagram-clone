@@ -4,7 +4,6 @@
 
 .app {
 	background-color: #fafafa;/* give off-white coloured background to app */
-	height: 100vh; /*take up 100% of the visible/view height of the window */
 }
 
 .app__header {
