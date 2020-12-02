@@ -10,11 +10,15 @@ function App() {
     //onSnapshot is an event listener that fires whenever there is a change in the collection
     db.collection("posts").onSnapshot((snapshot) => {
       //everytime a new post is added this code fires
-      setPosts(snapshot.docs.map((doc) => doc.data()));
+      setPosts(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          post: doc.data(),
+        }))
+      );
     });
   }, []);
 
-  
   return (
     <div className="app">
       <div className="app__header">
@@ -24,8 +28,9 @@ function App() {
           className="app__headerImage"
         />
       </div>
-      {posts.map((post) => (
+      {posts.map(({ id, post }) => (
         <Post
+          key={id}
           username={post.username}
           caption={post.caption}
           imageUrl={post.imageUrl}
