@@ -1,4 +1,5 @@
 import "./App.css";
+import Post from "./Post";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
           className="app__headerImage"
         />
       </div>
-
+	  <Post />
       {/* Post */}
       {/* Post */}
     </div>
