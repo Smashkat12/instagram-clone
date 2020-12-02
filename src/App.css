@@ -1,3 +1,15 @@
 * {
-	margin: 0;
+	margin: 0;/* reset default browser marging */
+}
+
+.app {
+	background-color: #fafafa;/* give off-white coloured background to app */
+	height: 100vh; /*take up 100% of the visible/view height of the window */
+}
+
+.app__header {
+	background-color: white;/* gives white background to header */
+	padding: 20px; /* prevents header contents from touching left/top edge */
+	border-bottom: 1px solid lightgray;
+	object-fit: contain;/* keeps aspect ratio of image, prevents image from stretching */
 }
