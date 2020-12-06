@@ -22,6 +22,10 @@
 	
 }
 
+.post__comments {
+	padding: 20px;
+}
+
 .post__text {
 	font-weight: normal;/* reset font boldness */
 	padding: 20px;/* prevents the username and comment from touching/sitting directly under the image */

@@ -11,9 +11,42 @@
 	padding: 20px; /* prevents header contents from touching left/top edge */
 	border-bottom: 1px solid lightgray;
 	object-fit: contain;/* keeps aspect ratio of image, prevents image from stretching */
+	display: flex;
+	justify-content: space-between;
+}
+
+.app__posts {
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.app__headerImage {
+	object-fit: contain;
 }
 
 .app__signup {
 	display: flex;
 	flex-direction: column;
+}
+
+.post__commentBox {
+	display: flex;
+	margin-top: 10px;
+}
+
+.post__input {
+	flex: 1; /* take up the most amount of space */
+	border: none;
+	padding: 10px;
+	border-top: 1px solid lightgray;
+
+}
+
+.post__button {
+	flex: 0; /* take up as little space as possible */
+	border: none;
+	border-top: 1px solid lightgray;
+	color: #6082a3;
+	background-color: transparent;
 }
