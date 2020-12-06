@@ -56,33 +56,35 @@ function Post({ imageUrl, username,user, caption, postId }) {
         {caption}
       </h4>
 
-	  <div className="post__comments">
-		  {comments.map((comment) => (
-			  <p>
-				  <strong>{comment.username}</strong> {comment.text}
-			  </p>
-		  ))}
-	  </div>
+      <div className="post__comments">
+        {comments.map((comment) => (
+          <p>
+            <strong>{comment.username}</strong> {comment.text}
+          </p>
+        ))}
+      </div>
 
-      <form className="post__commentBox">
-        <input
-          className="post__input"
-          placeholder="add a comment"
-          value={comment}
-          onChange={(e) => {
-            setComment(e.target.value);
-          }}
-          type="text"
-        />
-        <Button
-          className="post__button"
-          disable={!comment}
-          type="submit"
-          onClick={postComment}
-        >
-          Post
-        </Button>
-      </form>
+      {user && (
+        <form className="post__commentBox">
+          <input
+            className="post__input"
+            placeholder="add a comment"
+            value={comment}
+            onChange={(e) => {
+              setComment(e.target.value);
+            }}
+            type="text"
+          />
+          <Button
+            className="post__button"
+            disable={!comment}
+            type="submit"
+            onClick={postComment}
+          >
+            Post
+          </Button>
+        </form>
+      )}
     </div>
   );
 }

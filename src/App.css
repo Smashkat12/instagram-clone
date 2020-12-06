@@ -7,6 +7,9 @@
 }
 
 .app__header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
 	background-color: white;/* gives white background to header */
 	padding: 20px; /* prevents header contents from touching left/top edge */
 	border-bottom: 1px solid lightgray;
