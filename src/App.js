@@ -5,6 +5,7 @@ import { auth, db } from "./firebase";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import { Button, Input } from "@material-ui/core";
+import ImageUpload from "./ImageUpload";
 
 function getModalStyle() {
   const top = 50;
@@ -60,7 +61,7 @@ function App() {
 
   useEffect(() => {
     //onSnapshot is an event listener that fires whenever there is a change in the collection
-    db.collection("posts").onSnapshot((snapshot) => {
+    db.collection("posts").orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
       //everytime a new post is added this code fires
       setPosts(
         snapshot.docs.map((doc) => ({
@@ -94,6 +95,11 @@ function App() {
 
   return (
     <div className="app">
+
+		{user?.displayName ? (<ImageUpload username={user.displayName} />) : (
+			<h3>Please loggin to upload</h3>
+		)}
+      
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
           <form className="app__signup">
